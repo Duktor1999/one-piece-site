@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Дракула Михоук — One Piece</title>
+  <link rel="stylesheet" href="styles/mihawk.css" />
+  <link rel="stylesheet" href="mihawk.js">
+
+  <style>
+    @keyframes stareCut {
+      0% { filter: grayscale(1) blur(2px); opacity: 0; }
+      100% { filter: none; opacity: 1; }
+    }
+
+    body {
+      animation: stareCut 1s ease-out forwards;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Дракула Михоук</h1>
+    <p>Величайший мечник мира 🗡️ Холодный взгляд — точнее лезвия</p>
+  </header>
+
+  <main>
+    <section class="profile">
+      <img src="https://i.pinimg.com/736x/69/1f/16/691f165f4c237a7f50639be63bfc7d3d.jpg" alt="Михоук" />
+      <div class="info">
+        <h2>Основная информация</h2>
+        <ul>
+          <li><strong>Полное имя:</strong> Дракула Михоук</li>
+          <li><strong>Прозвище:</strong> Ястребиный Глаз</li>
+          <li><strong>День рождения:</strong> 9 марта</li>
+          <li><strong>Возраст:</strong> 43 года</li>
+          <li><strong>Рост:</strong> 198 см</li>
+          <li><strong>Мечта:</strong> Совершенное мастерство меча</li>
+          <li><strong>Оружие:</strong> Черный меч Ёру (один из 12 величайших)</li>
+          <li><strong>Роль:</strong> Член Cross Guild, бывший Ситибукай</li>
+          <li><strong>Озвучка:</strong> Takeshi Aono 🎙️</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="abilities">
+      <h2>Способности</h2>
+      <p>Михоук владеет чёрным мечом <strong>Ёру</strong> — величайшим клинком. Он точен, спокоен, смертоносен. Один взгляд его глаз может пробить уверенность, а один взмах — уничтожить гору. Обладает всеми формами хаки и беспрецедентной техникой фехтования.</p>
+      <ul>
+        <li>🗡 <strong>Мастер меча</strong> — способен побеждать без усилий</li>
+        <li>👁 <strong>Хаки наблюдения</strong> — пронизывающий взгляд</li>
+        <li>🛡 <strong>Хаки вооружения</strong> — чёрный меч = вечное оружие</li>
+        <li>🧊 <strong>Спокойствие</strong> — никогда не теряет хладнокровие</li>
+      </ul>
+    </section>
+
+    <section class="story">
+      <h2>История</h2>
+      <p>О прошлом Михоука известно мало. Он был известен как одиночка, побеждающий всех противников. Позже стал одним из Ситибукаев, а после роспуска вступил в союз с Крокодайлом в <strong>Cross Guild</strong>. Он — цель Зоро и идеал мечника.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>⚔️ Один взгляд — одна победа | © 2025</p>
+  </footer>
+
+  <button id="theme-toggle">🌙 Тёмная тема</button>
+  <button id="back-button">🔙 Назад</button>
+
+  <script>
+    const themeBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+    function setTheme(theme) {
+      body.className = theme;
+      localStorage.setItem("theme", theme);
+      themeBtn.textContent = theme === "dark-mode" ? "☀️ Светлая тема" : "🌙 Тёмная тема";
+    }
+    themeBtn.addEventListener("click", () => {
+      const newTheme = body.className === "dark-mode" ? "light-mode" : "dark-mode";
+      setTheme(newTheme);
+    });
+    setTheme(localStorage.getItem("theme") || "light-mode");
+
+    document.getElementById("back-button").addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

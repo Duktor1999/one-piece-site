@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Бартоломью Кума — One Piece</title>
+  <link rel="stylesheet" href="styles/kuma.css" />
+  <link rel="stylesheet" href="kuma.js">
+  <style>
+    @keyframes cyberFade {
+      0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    body {
+      animation: cyberFade 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Бартоломью Кума</h1>
+    <p>Мирный тиран и герой революции 🛡️</p>
+  </header>
+
+  <main>
+    <section class="profile">
+      <img src="https://i.pinimg.com/736x/ff/5b/01/ff5b017c2af9a366ff6c188a7c391807.jpg" alt="Кума" />
+      <div class="info">
+        <h2>Основная информация</h2>
+        <ul>
+          <li><strong>Полное имя:</strong> Бартоломью Кума</li>
+          <li><strong>День рождения:</strong> 9 февраля</li>
+          <li><strong>Возраст:</strong> 47 лет</li>
+          <li><strong>Рост:</strong> 689 см</li>
+          <li><strong>Мечта:</strong> Защитить человечество от тирании</li>
+          <li><strong>Фрукт:</strong> Нику Нику но Ми</li>
+          <li><strong>Роль:</strong> Революционер, эксперимент Пасифисты</li>
+          <li><strong>Озвучка:</strong> Hideyuki Hori</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="abilities">
+      <h2>⚡ Сила и жертва</h2>
+      <p>Кума владеет дьявольским фруктом, позволяющим отталкивать всё — включая боль, предметы и людей. После кибернетической модификации он стал безвольным оружием, сохранив свою душу.</p>
+      <ul>
+        <li>🖐 <strong>Отталкивание</strong> — передвижение за секунды по миру</li>
+        <li>🤖 <strong>Thrust Pad Cannon</strong> — Стреляет сферами из своих рук как из пулемёта</li>
+        <li>💥 <strong>Сила тела</strong> — танк, способный сражаться с адмиралами</li>
+        <li>💥 <b>Ursa Shock</b> - Создает большую сферу которая поражает большую область</li>
+      </ul>
+    </section>
+
+    <section class="story">
+      <h2>📖 История</h2>
+      <p>Будучи одним из Шичибукаев, Кума тайно служил революционерам. Он спас экипаж Луффи после Сабаоди, став живым щитом и потеряв человечность. Его история — одна из самых трагичных.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>🧠 Защити свободу даже ценой себя | &copy; 2025</p>
+  </footer>
+
+  <button id="theme-toggle">🌙 Тёмная тема</button>
+  <button id="back-button">🔙 Назад</button>
+
+  <script>
+    const themeBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+    function setTheme(theme) {
+      body.className = theme;
+      localStorage.setItem("theme", theme);
+      themeBtn.textContent = theme === "dark-mode" ? "☀️ Светлая тема" : "🌙 Тёмная тема";
+    }
+    themeBtn.addEventListener("click", () => {
+      const newTheme = body.className === "dark-mode" ? "light-mode" : "dark-mode";
+      setTheme(newTheme);
+    });
+    setTheme(localStorage.getItem("theme") || "light-mode");
+
+    document.getElementById("back-button").addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Портгас Д. Эйс — One Piece</title>
+  <link rel="stylesheet" href="styles/ace.css" />
+  <link rel="stylesheet" href="ace.js">
+
+  <style>
+    @keyframes firePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    body {
+      animation: firePulse 1.2s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Портгас Д. Эйс</h1>
+    <p>Носитель огня 🔥 Брат Луффи · Первый обладатель Меры-Меры</p>
+  </header>
+
+  <main>
+    <section class="profile">
+      <img src="https://m.media-amazon.com/images/I/61HmVVnwFsL._AC_UF1000,1000_QL80_.jpg" alt="Портгас Д. Эйс" />
+      <div class="info">
+        <h2>Основная информация</h2>
+        <ul>
+          <li><strong>Полное имя:</strong> Портгас Д. Эйс</li>
+          <li><strong>Прозвище:</strong> Огненный Эйс</li>
+          <li><strong>День рождения:</strong> 1 января 🎆</li>
+          <li><strong>Возраст при смерти:</strong> 20 лет</li>
+          <li><strong>Рост:</strong> 185 см</li>
+          <li><strong>Мечта:</strong> Быть свободным и защитить братство</li>
+          <li><strong>Фрукт:</strong> Мера‑Мера но Ми — огонь</li>
+          <li><strong>Роль:</strong> Временный носитель сна Белоуса</li>
+          <li><strong>Озвучка:</strong> Toshio Furukawa / Travis Willingham 🎙️</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="abilities">
+      <h2>Способности</h2>
+      <p>Эйс обладал способностями <strong>Мера‑Мера но Ми</strong>, позволяющими управлять огнём: создавать огненные кулаки, взрывы и лететь по воздуху. Также владел хаки вооружения и хотел стать сильнейшим.</p>
+      <ul>
+        <li>🔥 <strong>Fire Fist</strong> — гигантская пылающая удара</li>
+        <li>🌪 <strong>Firestorm</strong> — массовая огненная атака</li>
+        <li>🛡 <strong>Хаки вооружения</strong> — огненная защита</li>
+      </ul>
+    </section>
+
+    <section class="story">
+      <h2>История</h2>
+      <p>Сын Гол Д. Роджера, выросший далеко от отца. Принял фамилию Гаслей и стал пиратом, затем командиром Белоусов. Его смерть потрясла мир и вдохновила Луффи на новые подвиги.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>🔥 Легенда огня, брат Луффи | © 2025</p>
+  </footer>
+
+  <button id="theme-toggle">🌙 Тёмная тема</button>
+  <button id="back-button">🔙 Назад</button>
+
+  <script>
+    const themeBtn = document.getElementById("theme-toggle"),
+          body = document.body;
+    function setTheme(t){ body.className=t; localStorage.setItem('theme',t); themeBtn.textContent=t==='dark-mode'?'☀️ Светлая тема':'🌙 Тёмная тема'; }
+    themeBtn.addEventListener('click',()=>setTheme(body.className==='dark-mode'?'light-mode':'dark-mode'));
+    setTheme(localStorage.getItem('theme')||'light-mode');
+    document.getElementById('back-button').addEventListener('click',()=>window.location.href='index.html');
+  </script>
+
+</body>
+</html>

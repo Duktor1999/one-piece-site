@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Беппо — One Piece</title>
+  <link rel="stylesheet" href="styles/bepo.css" />
+  <link rel="stylesheet" href="bepo.js">
+  <style>
+    @keyframes iceFade {
+      from { opacity: 0; transform: translateY(20px); filter: blur(4px); }
+      to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+    body {
+      animation: iceFade 1s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Беппо</h1>
+    <p>Минк-полярник и штурман команды Трафальгара Ло ❄️🐻</p>
+  </header>
+
+  <main>
+    <section class="profile">
+      <img src="https://i.pinimg.com/736x/13/f3/a4/13f3a4b5786d6f0b9d3da81271b77b3d.jpg" alt="Беппо">
+      <div class="info">
+        <h2>Основная информация</h2>
+        <ul>
+          <li><strong>Полное имя:</strong> Беппо</li>
+          <li><strong>День рождения:</strong> 20 ноября</li>
+          <li><strong>Возраст:</strong> 20 лет</li>
+          <li><strong>Рост:</strong> 240 см</li>
+          <li><strong>Мечта:</strong> Стать достойным минком-героем 🚢</li>
+          <li><strong>Форма:</strong> Электро, стиль минков</li>
+          <li><strong>Озвучка:</strong> Yasuhiro Takato 🎙</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="abilities">
+      <h2>Способности и навыки</h2>
+      <p>Беппо, как и остальные минки, владеет Электро. Он сочетает это с боевым стилем мангустрельных ударов, которые признаются достойными боевого мавзоляма.</p>
+      <ul>
+        <li>❄️ <strong>Электро удары</strong> — заряженные молниями атаки</li>
+        <li>🛡 <strong>Защитные стойки</strong> — стойкость к атакам</li>
+        <li>🐾 <strong>Когти</strong> — точные и мощные удары</li>
+      </ul>
+    </section>
+
+    <section class="story">
+      <h2>История</h2>
+      <p>Беппо вырос среди минков на Зао. Он стал штурманом Трафальгара Ло и преданно защищает свою команду. Его спокойствие и сила стали важной поддержкой во время сражения за Вано.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>❄️ Холод и верность — дух минков | &copy; 2025</p>
+  </footer>
+
+  <button id="theme-toggle">🌙 Тёмная тема</button>
+  <button id="back-button">🔙 Назад</button>
+
+  <script>
+    const themeBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+    function setTheme(theme) {
+      body.className = theme;
+      localStorage.setItem("theme", theme);
+      themeBtn.textContent = theme === "dark-mode" ? "☀️ Светлая тема" : "🌙 Тёмная тема";
+    }
+    themeBtn.addEventListener("click", () => {
+      const newTheme = body.className === "dark-mode" ? "light-mode" : "dark-mode";
+      setTheme(newTheme);
+    });
+    setTheme(localStorage.getItem("theme") || "light-mode");
+
+    document.getElementById("back-button").addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

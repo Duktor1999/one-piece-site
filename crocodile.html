@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сэр Крокодайл — One Piece</title>
+  <link rel="stylesheet" href="styles/crocodile.css" />
+  <link rel="stylesheet" href="crocodile.js">
+
+  <style>
+    @keyframes dustAppears {
+      from { opacity: 0; transform: translateY(20px); filter: blur(4px); }
+      to { opacity: 1; transform: translateY(0); filter: none; }
+    }
+    body { animation: dustAppears 1s ease-out forwards; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Сэр Крокодайл</h1>
+    <p>Бывший Ситибукай 🦂 Повелитель песка</p>
+  </header>
+
+  <main>
+    <section class="profile">
+      <img src="https://i.pinimg.com/736x/20/1b/72/201b7233dac3d9438c3d11df0c5221e7.jpg" alt="Крокодайл" />
+      <div class="info">
+        <h2>Основная информация</h2>
+        <ul>
+          <li><strong>Полное имя:</strong> Сэр Крокодайл</li>
+          <li><strong>День рождения:</strong> 5 мая 🎂</li>
+          <li><strong>Примерный возраст:</strong> ~52 года</li>
+          <li><strong>Рост:</strong> 198 см</li>
+          <li><strong>Мечта:</strong> Завоевать власть и порядок ради сильных</li>
+          <li><strong>Фрукт:</strong> Суна-Суна но Ми — песок</li>
+          <li><strong>Роль:</strong> Глава Барок Воркс, бывший Ситибукай</li>
+          <li><strong>Озвучка:</strong> Tatsuya Nakazaki 🎙️</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="abilities">
+      <h2>Способности</h2>
+      <p>С помощью Суна-Суна но Ми Крокодайл может превращать всё в песок — создавать бури, сушить людей и атаковать стихией. Также он мастер тактики и обладает хаки вооружения.</p>
+      <ul>
+        <li>🌪 <strong>Песчаные бури</strong> — полномасштабные атаки стихией</li>
+        <li>🔥 <strong>Песчаные клинки</strong> — острые как меч</li>
+        <li>💧 <strong>Обезвоживание</strong> — высушивает цели, ослабляя их</li>
+        <li>🛡 <strong>Хаки вооружения</strong> — усиление тела и атаки</li>
+      </ul>
+    </section>
+
+    <section class="story">
+      <h2>История</h2>
+      <p>Крокодайл — одна из ключевых фигур в Арке Алабасты и основатель Барок Воркс. Его власть над песком и амбиции сделали его угрозой не только Самим Алабастой, но и всему миру. Он никогда не отступает перед вершиной и всегда играет по крупному.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>🦂 Повелитель пустынь | © 2025</p>
+  </footer>
+
+  <button id="theme-toggle">🌙 Тёмная тема</button>
+  <button id="back-button">🔙 Назад</button>
+  
+  <script>
+    const themeBtn = document.getElementById("theme-toggle"), body = document.body;
+    function setTheme(t){ body.className=t; localStorage.setItem('theme', t); themeBtn.textContent = t==='dark-mode'? '☀️ Светлая тема' : '🌙 Тёмная тема'; }
+    themeBtn.addEventListener('click', ()=>setTheme(body.className==='dark-mode'?'light-mode':'dark-mode'));
+    setTheme(localStorage.getItem('theme')||'light-mode');
+    document.getElementById('back-button').addEventListener('click', ()=>window.location.href='index.html');
+  </script>
+</body>
+</html>

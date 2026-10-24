@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Эмпорио Иванков — One Piece</title>
+  <link rel="stylesheet" href="styles/ivankov.css"/>
+  <link rel="stylesheet" href="ivankov.js">
+  <style>
+    @keyframes hormoneGlow {
+      0% { opacity: 0; filter: brightness(0.8) hue-rotate(0deg); transform: scale(0.9); }
+      100% { opacity: 1; filter: brightness(1.2) hue-rotate(360deg); transform: scale(1); }
+    }
+    body {
+      animation: hormoneGlow 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Эмпорио Иванков</h1>
+    <p>Королева революции, мастер Хорм‑Хорм и символ свободы 💅</p>
+  </header>
+
+  <main>
+    <section class="profile">
+      <img src="https://i.pinimg.com/736x/8b/61/af/8b61af634b3f9fc7af39fc640b778565.jpg" alt="Эмпорио Иванков">
+      <div class="info">
+        <h2>Основная информация</h2>
+        <ul>
+          <li><strong>Полное имя:</strong> Эмпорио Иванков</li>
+          <li><strong>День рождения:</strong> 8 января</li>
+          <li><strong>Возраст:</strong> Секрет 💅</li>
+          <li><strong>Рост:</strong> ~551 см (в форме Окама-Кинга)</li>
+          <li><strong>Мечта:</strong> Мир, где каждый свободен быть собой</li>
+          <li><strong>Фрукт:</strong> Хорм‑Хорм но Ми — изменение гормонального тела</li>
+          <li><strong>Озвучка:</strong> Norio Imamura 🎙️</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="abilities">
+      <h2>Способности и навыки</h2>
+      <p>Иванков — гениальный боец и трансформер. С помощью Хорм‑Хорм фрукта она меняет свой гормональный облик: от спокойного шутника до могучей фигуры революции.</p>
+      <ul>
+        <li>🌈 <strong>Хорм‑Хорм — гормональное изменение</strong> (Рост, сила, голос)</li>
+        <li>👑 <strong>Окама‑Кинг форма</strong> — величественна и внушает уважение</li>
+        <li>⚡ <strong>Революционный дух</strong> — магнетизм и харизма</li>
+      </ul>
+    </section>
+
+    <section class="story">
+      <h2>История</h2>
+      <p>Иванков — командир и символ многих, кто был пленён на Импел Дауне. Её внешний облик изменчив, но дух — неизменен. Она сражается ради свободы и принимает каждого под своё крыло.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>✨ Свобода начинается с самоидентификации | &copy; 2025</p>
+  </footer>
+
+  <button id="theme-toggle">🌙 Тёмная тема</button>
+  <button id="back-button">🔙 Назад</button>
+
+  <script>
+    const themeBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+    function setTheme(theme) {
+      body.className = theme;
+      localStorage.setItem('theme', theme);
+      themeBtn.textContent = theme === 'dark-mode' ? '☀️ Светлая тема' : '🌙 Тёмная тема';
+    }
+    themeBtn.addEventListener('click', () => {
+      setTheme(body.className === 'dark-mode' ? 'light-mode' : 'dark-mode');
+    });
+    setTheme(localStorage.getItem('theme') || 'light-mode');
+    document.getElementById('back-button').addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

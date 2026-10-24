@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Бартоломео — One Piece</title>
+  <link rel="stylesheet" href="styles/bartolomeo.css"/>
+  <link rel="stylesheet" href="bartolomeo.js">
+  <style>
+    @keyframes barrierRise {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    body {
+      animation: barrierRise 1s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Бартоломео</h1>
+    <p>Капитан Барти-Клуба и преданный фанат Луффи 🔰</p>
+  </header>
+
+  <main>
+    <section class="profile">
+      <img src="https://i.pinimg.com/474x/c0/48/20/c0482092d08d40d12c728242a7448579.jpg" alt="Бартоломео">
+      <div class="info">
+        <h2>Основная информация</h2>
+        <ul>
+          <li><strong>Полное имя:</strong> Бартоломео</li>
+          <li><strong>День рождения:</strong> 6 октября</li>
+          <li><strong>Возраст:</strong> 24 года</li>
+          <li><strong>Рост:</strong> 220 см</li>
+          <li><strong>Мечта:</strong> Принести славу имени Луффи!</li>
+          <li><strong>Фрукт:</strong> Бари Бари но Ми — барьерные щиты 🛡️</li>
+          <li><strong>Озвучка:</strong> Showtaro Morikubo 🎙️</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="abilities">
+      <h2>Способности и навыки</h2>
+      <p>Барьерные щиты Бартоломео могут защищать всё вокруг — включая зрителей. Он сам вызывает щит, стоит внутри и излучает фанатскую радость!</p>
+      <ul>
+        <li>🛡️ <strong>Барьерные щиты</strong> — удерживают врагов и защищают команду</li>
+        <li>🎭 <strong>Арена-энергия</strong> — как будто на Колизее</li>
+        <li>🎸 <strong>Фанатский энтузиазм</strong> — непоколебимая вера в Луффи</li>
+      </ul>
+    </section>
+
+    <section class="story">
+      <h2>История</h2>
+      <p>Бартоломео возглавил группу своенравных и преданных фанатов Луффи — Барти-Клуб. Он сражался на выпадающем Колизее и стал одним из капитанов Великого Флота Соломенной Шляпы.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>🛡️ Барьер не сломать! | &copy; 2025</p>
+  </footer>
+
+  <button id="theme-toggle">🌙 Тёмная тема</button>
+  <button id="back-button">🔙 Назад</button>
+
+  <script>
+    const themeBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+    function setTheme(theme) {
+      body.className = theme;
+      localStorage.setItem("theme", theme);
+      themeBtn.textContent = theme === 'dark-mode' ? '☀️ Светлая тема' : '🌙 Тёмная тема';
+    }
+    themeBtn.addEventListener('click', () => {
+      setTheme(body.className === 'dark-mode' ? 'light-mode' : 'dark-mode');
+    });
+    setTheme(localStorage.getItem('theme') || 'light-mode');
+    document.getElementById('back-button').addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+  </script>
+
+</body>
+</html>

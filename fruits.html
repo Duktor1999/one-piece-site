@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Энциклопедия дьявольских фруктов — One Piece</title>
+  <link rel="stylesheet" href="styles/fruits.css"/>
+  <link rel="stylesheet" href="fruits.js">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="fruits.html">📚 Энциклопедия фруктов</a>
+  </nav>
+
+  <header>
+    <h1>Энциклопедия дьявольских фруктов</h1>
+    <p>Изучи мир способностей One Piece</p>
+  </header>
+
+  <button id="type-info-btn" class="info-button" style="margin: 10px auto; display: block;">🔍 Подробности о типах фруктов</button>
+
+  <main>
+    <section class="search-filter">
+      <input type="search" id="fruit-search" placeholder="Поиск по названию или пользователю…" />
+      <select id="type-filter">
+        <option value="">Все типы</option>
+        <option value="Paramecia">Paramecia</option>
+        <option value="Zoan">Zoan</option>
+        <option value="Logia">Logia</option>
+      </select>
+    </section>
+
+    <section id="fruit-list">
+      <!-- Примеры карточек -->
+      <div class="fruit-card" data-type="Paramecia">
+        <img src="https://static.wikia.nocookie.net/onepiece/images/1/12/Gomu_Gomu_no_Mi_Infobox.png/revision/latest?cb=20221108072550" alt="Gomu Gomu no Mi" class="fruit-img">
+        <h3>Gomu Gomu no Mi (или Hito Hito no Mi, Model: Nika)</h3>
+        <p><strong>Тип:</strong> Paramecia / Mythical Zoan</p>
+        <p><strong>Пользователь:</strong> Monkey D. Luffy</p>
+        <p><strong>Способности:</strong> Резиновое тело, Gear Fifth — сила Бога Солнца</p>
+      </div>
+
+      <div class="fruit-card" data-type="Paramecia">
+        <img src="https://ih1.redbubble.net/image.1665182405.2720/flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="Bara Bara no Mi" class="fruit-img">
+        <h3>Bara Bara no Mi</h3>
+        <p><strong>Тип:</strong> Paramecia</p>
+        <p><strong>Пользователь:</strong> Buggy</p>
+        <p><strong>Способности:</strong> Разделение тела на части, иммунитет к режущим атакам</p>
+      </div>
+
+      <div class="fruit-card" data-type="Zoan">
+        <img src="https://preview.redd.it/k6jxmrxvvfj61.jpg?width=640&crop=smart&auto=webp&s=f1ee4ae9381b61248a5af930e191640fdf20bd3c" alt="Tori Tori no Mi" class="fruit-img">
+        <h3>Tori Tori no Mi, Model: Phoenix</h3>
+        <p><strong>Тип:</strong> Mythical Zoan</p>
+        <p><strong>Пользователь:</strong> Marco</p>
+        <p><strong>Способности:</strong> Превращение в феникса, регенерация огнём</p>
+      </div>
+
+      <div class="fruit-card" data-type="Paramecia">
+  <img src="https://i.redd.it/m6w3rpsf4zbd1.jpeg" alt="Gura Gura no Mi" class="fruit-img">
+  <h3>Gura Gura no Mi</h3>
+  <p><strong>Тип:</strong> Paramecia</p>
+  <p><strong>Пользователь:</strong> Эдвард Ньюгейт (Белоус)</p>
+  <p><strong>Способности:</strong> Создание сейсмических ударов, способных разрушать землю, море и воздух</p>
+</div>
+
+<div class="fruit-card" data-type="Paramecia">
+  <img src="https://i.pinimg.com/736x/42/c7/72/42c772c8237b3586587767f9c3ab9fea.jpg" alt="Ope Ope no Mi" class="fruit-img">
+  <h3>Ope Ope no Mi</h3>
+  <p><strong>Тип:</strong> Paramecia</p>
+  <p><strong>Пользователь:</strong> Трафальгар Ло</p>
+  <p><strong>Способности:</strong> Управление пространством в “ROOM”, телепортация, хирургия, замена душ</p>
+</div>
+
+<div class="fruit-card" data-type="Logia">
+  <img src="https://ih1.redbubble.net/image.1680236805.9311/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="Yami Yami no Mi" class="fruit-img">
+  <h3>Yami Yami no Mi</h3>
+  <p><strong>Тип:</strong> Logia</p>
+  <p><strong>Пользователь:</strong> Маршалл Д. Тич</p>
+  <p><strong>Способности:</strong> Манипуляция тьмой, поглощение объектов, отмена способностей других фруктов</p>
+</div>
+
+<div class="fruit-card" data-type="Paramecia">
+  <img src="https://ih1.redbubble.net/image.5006819243.5900/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="Mero no Mi" class="fruit-img">
+  <h3>Mero Mero no Mi</h3>
+  <p><strong>Тип:</strong> Paramecia</p>
+  <p><strong>Пользователь:</strong> Боа Хэнкок</p>
+  <p><strong>Способности:</strong> Превращение врагов в камень при воздействии влюблённости или страха</p>
+</div>
+
+<div class="fruit-card" data-type="Paramecia">
+  <img src="https://static.wikia.nocookie.net/opeclipse/images/9/92/Soru_Soru.png/revision/latest?cb=20240225032259" alt="Soru Soru no Mi" class="fruit-img">
+  <h3>Soru Soru no Mi</h3>
+  <p><strong>Тип:</strong> Paramecia</p>
+  <p><strong>Пользователь:</strong> Шарлотта Линлин (Биг Мам)</p>
+  <p><strong>Способности:</strong> Управление душами, создание гомункулов (живых объектов из души)</p>
+</div>
+
+<div class="fruit-card" data-type="Zoan">
+  <img src="https://static.wikia.nocookie.net/onepiece/images/3/38/Hito_Hito_no_Mi_Infobox.png/revision/latest?cb=20191228120250" alt="Hito Hito no Mi" class="fruit-img">
+  <h3>Hito Hito no Mi</h3>
+  <p><strong>Тип:</strong> Zoan</p>
+  <p><strong>Пользователь:</strong> Тони Тони Чоппер</p>
+  <p><strong>Способности:</strong> Позволяет зверю становиться человеком и приобретать человеческий интеллект</p>
+</div>
+
+<div class="fruit-card" data-type="Paramecia">
+  <img src="https://static.wikia.nocookie.net/onepiece/images/2/21/Hana_Hana_no_Mi_Infobox.png/revision/latest?cb=20191228120242" alt="Hana Hana no Mi" class="fruit-img">
+  <h3>Hana Hana no Mi</h3>
+  <p><strong>Тип:</strong> Paramecia</p>
+  <p><strong>Пользователь:</strong> Нико Робин</p>
+  <p><strong>Способности:</strong> Возможность «расти» руками, ногами и другими частями тела на любой поверхности</p>
+</div>
+
+<div class="fruit-card" data-type="Paramecia">
+  <img src="https://static.wikia.nocookie.net/onepiece/images/3/3b/Yomi_Yomi_no_Mi_Infobox.png/revision/latest?cb=20201116170233" alt="Yomi Yomi no Mi" class="fruit-img">
+  <h3>Yomi Yomi no Mi</h3>
+  <p><strong>Тип:</strong> Paramecia</p>
+  <p><strong>Пользователь:</strong> Брук</p>
+  <p><strong>Способности:</strong> Даёт возможность один раз воскреснуть и манипулировать душой</p>
+</div>
+
+<div class="fruit-card" data-type="Zoan">
+  <img src="https://static.wikia.nocookie.net/onepiece/images/1/1d/Inu_Inu_no_Mi%2C_Model_Okuchi_no_Makami_Infobox.png/revision/latest?cb=20221120062131" alt="Inu Inu no Mi" class="fruit-img">
+  <h3>Inu Inu no Mi, Модель: Ооками</h3>
+  <p><strong>Тип:</strong> Mythical Zoan</p>
+  <p><strong>Пользователь:</strong> Ямато</p>
+  <p><strong>Способности:</strong> Превращение в божественного волка Ооками, скорость и мощные атаки льдом</p>
+</div>
+
+<div class="fruit-card" data-type="Logia">
+  <img src="https://static.wikia.nocookie.net/onepiecefanon/images/1/13/Hie_Hie_no_Mi.png/revision/latest?cb=20211010181647" alt="Hie Hie no Mi" class="fruit-img">
+  <h3>Hie Hie no Mi</h3>
+  <p><strong>Тип:</strong> Logia</p>
+  <p><strong>Пользователь:</strong> Кузан (Аокидзи)</p>
+  <p><strong>Способности:</strong> Замораживание всего вокруг, создание ледяных конструкций</p>
+</div>
+
+<div class="fruit-card" data-type="Logia">
+  <img src="https://static.wikia.nocookie.net/onepiece/images/8/8c/Mera_Mera_no_Mi_Infobox.png/revision/latest?cb=20240710204632" alt="Mera Mera no Mi" class="fruit-img">
+  <h3>Mera Mera no Mi</h3>
+  <p><strong>Тип:</strong> Logia</p>
+  <p><strong>Пользователь:</strong> Эйс / Сабо</p>
+  <p><strong>Способности:</strong> Контроль и превращение в огонь, разрушительная мощь</p>
+</div>
+
+<div class="fruit-card" data-type="Logia">
+  <img src="https://static.wikia.nocookie.net/onepiece/images/7/7d/Suna_Suna_no_Mi_Infobox.png/revision/latest?cb=20220408131752" alt="Suna Suna no Mi" class="fruit-img">
+  <h3>Suna Suna no Mi</h3>
+  <p><strong>Тип:</strong> Logia</p>
+  <p><strong>Пользователь:</strong> Крокодайл</p>
+  <p><strong>Способности:</strong> Управление песком, осушение объектов, создание бурь и клинков из песка</p>
+</div>
+
+<div class="fruit-card" data-type="Paramecia">
+  <img src="https://ih1.redbubble.net/image.2030914863.3751/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="Ito Ito no Mi" class="fruit-img">
+  <h3>Ito Ito no Mi</h3>
+  <p><strong>Тип:</strong> Paramecia</p>
+  <p><strong>Пользователь:</strong> Дофламинго</p>
+  <p><strong>Способности:</strong> Создание и управление невидимыми нитями, кукловодство, полёт по воздуху</p>
+</div>
+
+<div class="fruit-card" data-type="Paramecia">
+  <img src="https://static.wikia.nocookie.net/onepiece/images/2/2c/Mochi_Mochi_no_Mi_Infobox.png/revision/latest?cb=20220525022420" alt="Mochi Mochi no Mi" class="fruit-img">
+  <h3>Mochi Mochi no Mi</h3>
+  <p><strong>Тип:</strong> Special Paramecia</p>
+  <p><strong>Пользователь:</strong> Шарлотта Катакури</p>
+  <p><strong>Способности:</strong> Создание и манипуляция моти (липкая масса), высокая скорость и мощь</p>
+</div>
+
+<div class="fruit-card" data-type="Paramecia">
+  <img src="https://static.wikia.nocookie.net/oproleplaying/images/b/b2/Jiki_Jiki_Info.png/revision/latest?cb=20240102025250" alt="Jiki Jiki no Mi" class="fruit-img">
+  <h3>Jiki Jiki no Mi</h3>
+  <p><strong>Тип:</strong> Paramecia</p>
+  <p><strong>Пользователь:</strong> Юстасс Кид</p>
+  <p><strong>Способности:</strong> Магнитные поля, притягивание металла, создание гигантского оружия</p>
+</div>
+
+<div class="fruit-card" data-type="Zoan">
+  <img src="https://static.wikia.nocookie.net/onepiece/images/f/f9/Uo_Uo_no_Mi%2C_Model_Seiryu_Infobox.png/revision/latest?cb=20211204205430" alt="Uo Uo no Mi Seiryu" class="fruit-img">
+  <h3>Uo Uo no Mi, Модель: Seiryu</h3>
+  <p><strong>Тип:</strong> Mythical Zoan</p>
+  <p><strong>Пользователь:</strong> Кайдо</p>
+  <p><strong>Способности:</strong> Превращение в огромного восточного дракона, контроль над стихиями, мощь разрушения</p>
+</div>
+
+<div class="fruit-card" data-type="Zoan">
+  <img src="https://static.wikia.nocookie.net/onepiece/images/9/98/Neko_Neko_no_Mi%2C_Model_Leopard_Infobox.png/revision/latest?cb=20230306213909" alt="Neko Neko no Mi" class="fruit-img">
+  <h3>Neko Neko no Mi, Модель: Леопард</h3>
+  <p><strong>Тип:</strong> Zoan</p>
+  <p><strong>Пользователь:</strong> Роб Луцчи</p>
+  <p><strong>Способности:</strong> Превращение в леопарда или гибридную форму, сверхсила, скорость, боевые навыки</p>
+</div>
+
+<div class="fruit-card" data-type="Paramecia">
+  <img src="images/frut.jpg" alt="Age‑Age no Mi" class="fruit-img">
+  <h3>Age‑Age no Mi</h3>
+  <p><strong>Тип:</strong> Paramecia</p>
+  <p><strong>Пользователь:</strong> Бонни</p>
+  <p><strong>Способности:</strong> Манипуляция временной старостью — старит или омолаживает объекты</p>
+</div>
+
+<div class="fruit-card" data-type="Paramecia">
+  <img src="https://static.wikia.nocookie.net/oproleplaying/images/b/b0/BariBari.png/revision/latest?cb=20230206165943" alt="Bari Bari no Mi" class="fruit-img">
+  <h3>Bari Bari no Mi</h3>
+  <p><strong>Тип:</strong> Paramecia</p>
+  <p><strong>Пользователь:</strong> Бартоломео</p>
+  <p><strong>Способности:</strong> Создаёт бариеры которыми можно атакавать и отражает атаки</p>
+</div>
+
+<div class="fruit-card" data-type="Paramecia">
+  <img src="https://static.wikia.nocookie.net/oproleplaying/images/d/d0/Oaisjviosdjvasv.webp/revision/latest/thumbnail/width/360/height/450?cb=20220617151413" alt="Horu Horu no Mi" class="fruit-img">
+  <h3>Horu Horu no Mi</h3>
+  <p><strong>Тип:</strong> Paramecia</p>
+  <p><strong>Пользователь:</strong> Иванков</p>
+  <p><strong>Способности:</strong> изменяет гармоны себя и может и у противника </p>
+</div>
+
+<div class="fruit-card" data-type="Paramecia">
+  <img src="https://static.wikia.nocookie.net/onepiece/images/7/7b/Kage_Kage_no_Mi_Infobox.png/revision/latest?cb=20240628055643" alt="Kage Kage no Mi" class="fruit-img">
+  <h3>Kage Kage no Mi</h3>
+  <p><strong>Тип:</strong> Paramecia</p>
+  <p><strong>Пользователь:</strong> Гекко Мория</p>
+  <p><strong>Способности:</strong> Контроль над тенями, создание теневых существ, захват души</p>
+</div>
+
+<div class="fruit-card" data-type="Paramecia">
+  <img src="https://preview.redd.it/v3c9kvctsrl51.jpg?width=640&crop=smart&auto=webp&s=951d551ca246c815fc2c2808e91bfaaecc73132f" alt="Mane Mane no Mi" class="fruit-img">
+  <h3>Mane Mane no Mi</h3>
+  <p><strong>Тип:</strong> Paramecia</p>
+  <p><strong>Пользователь:</strong> Бон Клей</p>
+  <p><strong>Способности:</strong> Превращение и имитация внешности и голоса других людей</p>
+</div>
+
+<div class="fruit-card" data-type="Paramecia">
+  <img src="https://static.wikia.nocookie.net/opeclipse/images/7/7e/Sketch1709917029937.png/revision/latest?cb=20240308170228" alt="Niku Niku no Mi" class="fruit-img">
+  <h3>Niku Niku no Mi</h3>
+  <p><strong>Тип:</strong> Paramecia</p>
+  <p><strong>Пользователь:</strong> Бартоломью Кума</p>
+  <p><strong>Способности:</strong> Отталкивает всё: объекты, атаки, телепортация, перенос боли или урон на других</p>
+</div>
+
+
+
+    </section>
+
+
+<div id="type-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Типы дьявольских фруктов</h2>
+    <ul>
+      <li><strong>Paramecia</strong> — дает пользователю сверхъестественные способности, изменяющие его тело, действия или окружающий мир. (Примеры: Гому Гому, Опе Опе)</li>
+      <li><strong>Zoan</strong> — позволяет превращаться в животное или гибридную форму. Существуют и мифические модели. (Пример: Марко — феникс)</li>
+      <li><strong>Logia</strong> — дарует возможность контролировать природные элементы и становиться ими. (Пример: Ями Ями — тьма)</li>
+    </ul>
+  </div>
+</div>
+
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+  const cards = Array.from(document.querySelectorAll('.fruit-card'));
+  document.getElementById('fruit-search').addEventListener('input', e => {
+    const v = e.target.value.toLowerCase();
+    cards.forEach(c => {
+      c.style.display = (c.textContent.toLowerCase().includes(v)) ? 'block' : 'none';
+    });
+  });
+  document.getElementById('type-filter').addEventListener('change', e => {
+    const t = e.target.value;
+    cards.forEach(c => {
+      c.style.display = (!t||c.dataset.type===t) ? 'block' : 'none';
+    });
+  });
+</script>
+
+
+<script>
+  const modal = document.getElementById("type-modal");
+  const btn = document.getElementById("type-info-btn");
+  const close = document.querySelector(".close-btn");
+
+  btn.onclick = () => modal.style.display = "block";
+  close.onclick = () => modal.style.display = "none";
+  window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
+</script>
+
+</body>
+</html>

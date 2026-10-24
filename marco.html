@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Марко — One Piece</title>
+  <link rel="stylesheet" href="styles/marco.css"/>
+  <link rel="stylesheet" href="marco.js">
+  <style>
+    @keyframes phoenixRise {
+      0% { opacity: 0; transform: scale(0.95) translateY(20px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    body {
+      animation: phoenixRise 1s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Марко</h1>
+    <p>Командир 1-го отряда Белоуса, мифическая птица феникс 🔥</p>
+  </header>
+
+  <main>
+    <section class="profile">
+      <img src="https://ih1.redbubble.net/image.4583976282.3717/flat,750x,075,f-pad,750x1000,f8f8f8.u2.jpg" alt="Марко Феникс">
+      <div class="info">
+        <h2>Основная информация</h2>
+        <ul>
+          <li><strong>Полное имя:</strong> Марко</li>
+          <li><strong>День рождения:</strong> 5 октября</li>
+          <li><strong>Возраст:</strong> 45 лет</li>
+          <li><strong>Рост:</strong> 203 см</li>
+          <li><strong>Мечта:</strong> Хранить наследие Белоуса и защитить тех, кого любил</li>
+          <li><strong>Фрукт:</strong> Тори Тори но Ми, модель: Феникс 🔥</li>
+          <li><strong>Озвучка:</strong> Masakazu Morita 🎙</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="abilities">
+      <h2>Способности и навыки</h2>
+      <p>Марко обладает мифической зоан-способностью, позволяющей ему регенерировать и вызывать огненные крылья-феникса. Он телепортируется в огне и остаётся непобедимым даже после смертельной травмы.</p>
+      <ul>
+        <li>🔥 <strong>Огненные крылья</strong> — крылья из пламени для полёта и защиты</li>
+        <li>🧬 <strong>Регенерация</strong> — быстрая восстановление ран</li>
+        <li>👊 <strong>Боевой дух</strong> — отвага, самоотверженность и лидерство</li>
+      </ul>
+    </section>
+
+    <section class="story">
+      <h2>История</h2>
+      <p>Марко — правая рука Белоуса, один из последних выживших после Войны у Маринфорда. Он хранит веру и мечту Белоуса, вдохновляя других и защищая наследие Короля Пиратов.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>🕊️ Марко — бессмертный феникс Гранд Лайн | &copy; 2025</p>
+  </footer>
+
+  <button id="theme-toggle">🌙 Тёмная тема</button>
+  <button id="back-button">🔙 Назад</button>
+
+  <script>
+    const themeBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+    function setTheme(theme) {
+      body.className = theme;
+      localStorage.setItem("theme", theme);
+      themeBtn.textContent = theme === "dark-mode" ? "☀️ Светлая тема" : "🌙 Тёмная тема";
+    }
+    themeBtn.addEventListener("click", () => {
+      const newTheme = body.className === "dark-mode" ? "light-mode" : "dark-mode";
+      setTheme(newTheme);
+    });
+    setTheme(localStorage.getItem("theme") || "light-mode");
+
+    document.getElementById("back-button").addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

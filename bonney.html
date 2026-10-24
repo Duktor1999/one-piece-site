@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Джуэлри Бонни — One Piece</title>
+  <link rel="stylesheet" href="styles/bonney.css"/>
+  <link rel="stylesheet" href="bonney.js">
+  <style>
+    @keyframes ageShift {
+      0% { opacity: 0; transform: scale(0.8) rotate(-10deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+    body {
+      animation: ageShift 1s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Джуэлри Бонни</h1>
+    <p>Супернова, хрупкая на вид, но изменяющая время и возраст 🕰️💫</p>
+  </header>
+
+  <main>
+    <section class="profile">
+      <img src="https://ih1.redbubble.net/image.4773181706.7967/flat,750x,075,f-pad,750x1000,f8f8f8.u2.jpg" alt="Джуэлри Бонни">
+      <div class="info">
+        <h2>Основная информация</h2>
+        <ul>
+          <li><strong>Полное имя:</strong> Джуэлри Бонни</li>
+          <li><strong>День рождения:</strong> 1 сентября</li>
+          <li><strong>Возраст:</strong> ~24 года (внешне варьируется)</li>
+          <li><strong>Рост:</strong> 174 см</li>
+          <li><strong>Мечта:</strong> Отомстить за отца и узнать правду о мире</li>
+          <li><strong>Способность:</strong> Манипуляция возрастом, внешне меняется</li>
+          <li><strong>Озвучка:</strong> Reiko Kiuchi 🎙️</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="abilities">
+      <h2>Способности и навыки</h2>
+      <p>Бонни способна изменять возраст себя и других благодаря способности к манипуляции времени. Её способность остаётся загадкой и предметом множества слухов.</p>
+      <ul>
+        <li>🕰️ <strong>Изменение возраста</strong> — молодеет или стареет мгновенно</li>
+        <li>🔍 <strong>Скрытая сила госструктур</strong> — якобы связана с Уро Соруджи</li>
+        <li>🧠 <strong>Тактическая хитрость</strong> — работает в тенях и манипулирует ситуацией</li>
+      </ul>
+    </section>
+
+    <section class="story">
+      <h2>История</h2>
+      <p>Джуэлри Бонни — одна из редчайших обладательниц способности изменять возраст. Связана с таинственной фигурой и покинула Мировое правительство, неся свою тайну. Её судьба переплелась с Луффи и Революцией.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>⏳ Время — не преграда для Бонни | &copy; 2025</p>
+  </footer>
+
+  <button id="theme-toggle">🌙 Тёмная тема</button>
+  <button id="back-button">🔙 Назад</button>
+
+  <script>
+    const themeBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+    function setTheme(theme) {
+      body.className = theme;
+      localStorage.setItem("theme", theme);
+      themeBtn.textContent = theme === "dark-mode" ? "☀️ Светлая тема" : "🌙 Тёмная тема";
+    }
+    themeBtn.addEventListener("click", () => {
+      const newTheme = body.className === "dark-mode" ? "light-mode" : "dark-mode";
+      setTheme(newTheme);
+    });
+    setTheme(localStorage.getItem("theme") || "light-mode");
+
+    document.getElementById("back-button").addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

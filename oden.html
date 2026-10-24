@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Козуки Оден — One Piece</title>
+  <link rel="stylesheet" href="styles/oden.css"/>
+  <link rel="stylesheet" href="oden.js">
+  <style>
+    @keyframes pathOfWaves {
+      0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    body {
+      animation: pathOfWaves 1s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Козуки Оден</h1>
+    <p>Самурай Вано, искатель приключений и путь свободы 🌊</p>
+  </header>
+
+  <main>
+    <section class="profile">
+      <img src="https://i.pinimg.com/1200x/c8/1e/72/c81e72eec136b5693b8c0ecdd145fca0.jpg" alt="Козуки Оден">
+      <div class="info">
+        <h2>Основная информация</h2>
+        <ul>
+          <li><strong>Полное имя:</strong> Козуки Оден</li>
+          <li><strong>День рождения:</strong> 7 января</li>
+          <li><strong>Возраст при смерти:</strong> 39 лет</li>
+          <li><strong>Рост:</strong> 290 см</li>
+          <li><strong>Мечта:</strong> Открыть путь свободы Вано и присоединиться к Роджеру</li>
+          <li><strong>Способность:</strong> Самурай высочайшего уровня — двусабельная техника и блеск духа 🗡️</li>
+          <li><strong>Озвучка:</strong> Kenyuu Horiuchi 🎙️</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="abilities">
+      <h2>Навыки и способности</h2>
+      <p>Оден — мастер мечей и путешественник. Он владел двумя самурайскими мечами (Амудауру и Энма), владел силой духа и приверженностью к приключениям.</p>
+      <ul>
+        <li>⚔️ <strong>Двусабельная техника</strong> — мечи «Энма» и «Амудауру»</li>
+        <li>🌊 <strong>Сила моря</strong> — стойкость и традиции Вано</li>
+        <li>🧠 <strong>Непоколебимый дух</strong> — вдохновляет и ведёт всех вперёд</li>
+      </ul>
+    </section>
+
+    <section class="story">
+      <h2>История</h2>
+      <p>Путешествовал с Белоусом и Роджером, стремясь понять смысл свободы. В вере в справедливость он вернулся в Вано, чтобы изменить судьбу страны и открыть её мир.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>🌊 Оден — мост от Вано к Великому Пути | &copy; 2025</p>
+  </footer>
+
+  <button id="theme-toggle">🌙 Тёмная тема</button>
+  <button id="back-button">🔙 Назад</button>
+
+  <script>
+    const themeBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+    function setTheme(theme) {
+      body.className = theme;
+      localStorage.setItem('theme', theme);
+      themeBtn.textContent = theme === 'dark-mode' ? '☀️ Светлая тема' : '🌙 Тёмная тема';
+    }
+    themeBtn.addEventListener('click', () => {
+      setTheme(body.className === 'dark-mode' ? 'light-mode' : 'dark-mode');
+    });
+    setTheme(localStorage.getItem('theme') || 'light-mode');
+    document.getElementById('back-button').addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Багги — One Piece</title>
+  <link rel="stylesheet" href="styles/buggy.css" />
+  <link rel="stylesheet" href="buggy.js">
+
+  <style>
+    @keyframes bodyPartsFloat {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(5px, -5px) rotate(2deg); }
+      100% { transform: translate(0, 0); }
+    }
+
+    body {
+      animation: bodyPartsFloat 3s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Багги</h1>
+    <p>Император морей 🤡 Клоун, которого боятся!</p>
+  </header>
+
+  <main>
+    <section class="profile">
+      <img src="https://preview.redd.it/if-current-bounties-were-power-levels-which-ones-would-be-v0-4rr8opuf1tjb1.png?auto=webp&s=8bb528c656b78a4603e63f6beacac18ec39f1bce" alt="Багги" />
+      <div class="info">
+        <h2>Профиль</h2>
+        <ul>
+          <li><strong>Полное имя:</strong> Багги Клоун</li>
+          <li><strong>День рождения:</strong> Ags 8th 🎈</li>
+          <li><strong>Возраст:</strong> 39 лет</li>
+          <li><strong>Рост:</strong> 192 см</li>
+          <li><strong>Мечта:</strong> Стать Королём пиратов (ну... типа 😅)</li>
+          <li><strong>Фрукт:</strong> Бара-Бара но Ми — разлетающееся тело</li>
+          <li><strong>Роль:</strong> Император моря, основатель Cross Guild</li>
+          <li><strong>Озвучка:</strong> Shigeru Chiba 🎙️</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="abilities">
+      <h2>Сила и способности</h2>
+      <p>Багги съел <strong>Бара-Бара но Ми</strong>, позволяющий его телу разлетаться на части. Он неуязвим к порезам. Несмотря на клоунскую репутацию, он умеет выживать, манипулировать и вдохновлять (и случайно стал Императором).</p>
+      <ul>
+        <li>🎯 <strong>Части тела</strong> — разлетаются, чтобы атаковать и избегать урона</li>
+        <li>💥 <strong>Бомбастичность</strong> — мастер паники и театральных эффектов</li>
+        <li>🪄 <strong>Речь</strong> — умеет говорить так, чтобы его слушали (и боялись!)</li>
+      </ul>
+    </section>
+
+    <section class="story">
+      <h2>Биография</h2>
+      <p>Багги начинал как юнга на корабле Гол Д. Роджера. Позже стал клоуном и капитаном. Его невероятное везение и медийная сила привели его к основанию <strong>Cross Guild</strong> и титулу Императора. Никто не знает, как он это делает — даже он сам!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>🎪 Клоунская Империя Багги | © 2025 Все права защищены</p>
+  </footer>
+
+  <button id="theme-toggle">🌙 Тёмная тема</button>
+  <button id="back-button">🔙 Назад</button>
+
+  <script>
+    // Тема
+    const themeBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+    function setTheme(theme) {
+      body.className = theme;
+      localStorage.setItem("theme", theme);
+      themeBtn.textContent = theme === "dark-mode" ? "☀️ Светлая тема" : "🌙 Тёмная тема";
+    }
+    themeBtn.addEventListener("click", () => {
+      const newTheme = body.className === "dark-mode" ? "light-mode" : "dark-mode";
+      setTheme(newTheme);
+    });
+    setTheme(localStorage.getItem("theme") || "light-mode");
+
+    // Назад
+    document.getElementById("back-button").addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

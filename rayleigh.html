@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Сильверс Рейли — One Piece</title>
+  <link rel="stylesheet" href="styles/rayleigh.css"/>
+  <link rel="stylesheet" href="rayleigh.js">
+  <style>
+    @keyframes hakiManifest {
+      0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    body {
+      animation: hakiManifest 1s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Сильверс Рейли</h1>
+    <p>«Тёмный Король», легендарный пират и наставник Луффи ⚡</p>
+  </header>
+
+  <main>
+    <section class="profile">
+      <img src="https://i.pinimg.com/originals/6e/c7/62/6ec762e2f365198ad0140ea6c1f9ac56.jpg" alt="Сильверс Рейли">
+      <div class="info">
+        <h2>Основная информация</h2>
+        <ul>
+          <li><strong>Полное имя:</strong> Сильверс Рейли</li>
+          <li><strong>День рождения:</strong> 13 мая</li>
+          <li><strong>Возраст:</strong> 78 лет</li>
+          <li><strong>Рост:</strong> 188 см</li>
+          <li><strong>Мечта:</strong> Защитить свободу следующего поколения</li>
+          <li><strong>Способность:</strong> Мастер всех типов Хаки</li>
+          <li><strong>Озвучка:</strong> Keiichi Sonobe 🎙️</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="abilities">
+      <h2>Способности и навыки</h2>
+      <p>Рейли — мастер всех типов Хаки: владение духовной энергией, уверенность и техника, ставшие легендой. Он вдохновляет Луффи и был ключевым советником Роджера.</p>
+      <ul>
+        <li>⚡ <strong>Коралевская Воля</strong> — подавляющее лидерское присутствие</li>
+        <li>🧠 <strong>Хаки Предвидения</strong> — интуиция и способность предугадывать</li>
+        <li>💪 <strong>Хаки Воружения</strong> — мощная защита и атака</li>
+      </ul>
+    </section>
+
+    <section class="story">
+      <h2>История</h2>
+      <p>Когда Рейли пришёл к Луффи в начале Великого Паруса, он передал своё знание Хаки. Будучи старым пиратом и легендарным персонажем, он сохранил свободу и научил Луффи идти вперёд.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>⚓ Свет Хаки для будущего | &copy; 2025</p>
+  </footer>
+
+  <button id="theme-toggle">🌙 Тёмная тема</button>
+  <button id="back-button">🔙 Назад</button>
+
+  <script>
+    const themeBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+    function setTheme(theme) {
+      body.className = theme;
+      localStorage.setItem("theme", theme);
+      themeBtn.textContent = theme === 'dark-mode' ? '☀️ Светлая тема' : '🌙 Тёмная тема';
+    }
+    themeBtn.addEventListener('click', () => {
+      setTheme(body.className === 'dark-mode' ? 'light-mode' : 'dark-mode');
+    });
+    setTheme(localStorage.getItem('theme') || 'light-mode');
+    document.getElementById('back-button').addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
